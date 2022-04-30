@@ -1,0 +1,43 @@
+# Tinder Review NLP Model
+## Introduction
+In today’s society, meeting someone online or through a dating app is the new norm. Tinder was one of the pioneers in this new dating application frenzy in the world, and it still remains on top despite countless competitors. We wanted to find out what it is that people really feel about this application, so we decided to take the Google Play reviews from 2013 -2022 and analyze the reviews using Natural Language Processing techniques. Our goal was to create a model to accurately predict the user’s rating based on their text review. The data set we used to build and train our model comes from Kaggle (https://www.kaggle.com/datasets/shivkumarganesh/tinder-google-play-store-review?resource=download).
+The dataset spans from 2013 all the way to March, 2022. We started out with about 84MB of data, consisting of the review, the user’s name, date of review, time of review, reply content, score rating, and the thumbs up count. For our project we ultimately only utilized the date, time, score rating, and review.
+## Data Features Explanations
+Here is what each column in the original dataset represents::
+- **userName**: name of a user
+- **userImage**: profile Image that a user has
+- **content**: this represents the comments made by a user
+- **score**: scores/rating between 1 to 5
+- **thumbsUpCount**: number of Thumbs up received by a person
+- **reviewCreatedVersion**: version number on which the review is created
+- **at**:   created at (date and time)
+- **replyContent**: reply to the comment by the Company
+- **repliedAt**: Date and time of the above reply
+- **reviewId**: unique identifier
+## Feature Engineered Columns
+- Polarity_Rating: separates into positive (4-5), neutral (3), and negative (1-2)
+## Cleaning the Data
+- Removed stopwords
+- Removed punctuation
+- Standardized capitalization
+- Removed emojis
+- Stemmed words with Snowball Stemmer
+## Columns Used Building the Models
+Stemmed and cleaned reviews were used in our predictive models.
+## Random Forest Model
+- Used stemmed reviews to predict polarity rating
+- Grid search used to identify most efficient parameters
+- Utilized PCA for model to run smoothly
+- 62% accuracy
+## Logistic Regression Model
+- Predicted score based on stemmed reviews
+- Grid search again used
+- 62% accuracy
+### Analyzing Model Limitations
+- Random Forest model had a difficult time accurately predicting neutral ratings
+- Logistic Regression model rarely, if ever, predicted a score of 2 or 4
+- Lack of neutral reviews in the dataset may have contributed to this issue
+# Findings & Suggestions
+- Majority of users rate Tinder a 1 or a 5
+- More positive reviews than negative
+- Model is much more efficient at predicting the extremes rather than the in-betweens
