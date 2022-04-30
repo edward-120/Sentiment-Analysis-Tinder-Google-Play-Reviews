@@ -1,7 +1,10 @@
-# Tinder Review NLP Model
+#Tinder Review NLP Model
+
 ## Introduction
+
 In today’s society, meeting someone online or through a dating app is the new norm. Tinder was one of the pioneers in this new dating application frenzy in the world, and it still remains on top despite countless competitors. We wanted to find out what it is that people really feel about this application, so we decided to take the Google Play reviews from 2013 -2022 and analyze the reviews using Natural Language Processing techniques. Our goal was to create a model to accurately predict the user’s rating based on their text review. The data set we used to build and train our model comes from Kaggle (https://www.kaggle.com/datasets/shivkumarganesh/tinder-google-play-store-review?resource=download).
 The dataset spans from 2013 all the way to March, 2022. We started out with about 84MB of data, consisting of the review, the user’s name, date of review, time of review, reply content, score rating, and the thumbs up count. For our project we ultimately only utilized the date, time, score rating, and review.
+
 ## Data Features Explanations
 Here is what each column in the original dataset represents::
 - **userName**: name of a user
